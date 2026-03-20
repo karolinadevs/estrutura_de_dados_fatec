@@ -51,7 +51,20 @@ int empilha (int e, t_pilha *p) {
 int desempilha (t_pilha *p, int *desempilhado) {
     if(pilha_vazia(p)) return FRACASSO;
     //p -> topo --;
-    *desempilhado = p->v[--p->topo]; //desrefenciacao 
+    *desempilhado = p->v[--p->topo]; //operador * = vai onde ele aponta //desreferenciação
     return SUCESSO;
+}
+
+// "% " = tipo
+// i % j = resto
+
+void mostra_pilha (t_pilha *p) {
+    if (pilha_vazia(p)) printf("pilha vazia\n");
+    else {
+        for (int i = p -> topo - 1; i >= 0; i--) {
+            printf ("%d ", p -> v[i]);
+        }
+        printf("\n");
+    }
 }
 
